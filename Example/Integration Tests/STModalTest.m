@@ -20,19 +20,17 @@
     [UIAElement(button) tap];
     
     SLButton *cancelButton = [SLButton elementWithAccessibilityLabel:@"Cancel"];
-    SLAssertTrueWithTimeout([cancelButton isValidAndVisible], 3, @"Regular Modal cancel button valid and visible");
+    SLAssertTrueWithTimeout([cancelButton isValidAndVisible], 3., @"Regular Modal cancel button valid and visible");
     [cancelButton tap];
 }
 
-- (void)focus_testSKStoreProductInteractionUsingStaticElement
+- (void)testSKStoreProductInteractionUsingStaticElement
 {
     SLButton *button = [SLButton elementWithAccessibilityLabel:@"SKStoreProduct"];
     [UIAElement(button) tap];
     
-    [self wait:2];
-    
     SLStaticElement *cancel = [[SLStaticElement alloc] initWithUIARepresentation:@"UIATarget.localTarget().frontMostApp().navigationBar().leftButton()"];
-    SLAssertTrueWithTimeout([UIAElement(cancel) isValidAndVisible], 3, @"Cancel button is valid");
+    SLAssertTrueWithTimeout([UIAElement(cancel) isValidAndVisible], 3., @"Cancel button is valid");
     [cancel tap];
 }
 
@@ -41,13 +39,10 @@
     SLButton *button = [SLButton elementWithAccessibilityLabel:@"SKStoreProduct"];
     [UIAElement(button) tap];
     
-    [self wait:5];
+    [self wait:2];
     
-    [[SLWindow mainWindow] logElementTree];
-    
-    //    SLElement *cancelButton  =[SLElement elementWithAccessibilityLabel:nil value:@"Cancel" traits:SLUIAccessibilityTraitAny];
     SLButton *cancelButton = [SLButton elementWithAccessibilityLabel:@"Cancel"];
-    SLAssertTrueWithTimeout([cancelButton isValidAndVisible], 5, @"cancel button should be visible on SKStoreProduct");
+    SLAssertTrueWithTimeout([cancelButton isValidAndVisible], 2.0, @"cancel button should be visible on SKStoreProduct");
 }
 
 @end
