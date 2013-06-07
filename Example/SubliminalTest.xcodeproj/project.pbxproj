@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1F18743D1606533F000360CA /* STLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F18743C1606533F000360CA /* STLoginViewController.xib */; };
 		1F18743E1606533F000360CA /* STLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1F18743C1606533F000360CA /* STLoginViewController.xib */; };
+		509257D717628B01004E31D9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509257D617628B01004E31D9 /* StoreKit.framework */; };
+		509257DB17628C4B004E31D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F095E85817534B8100FF653A /* Default-568h@2x.png */; };
+		509257DE17628ECD004E31D9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 509257D617628B01004E31D9 /* StoreKit.framework */; };
+		509257E017629498004E31D9 /* STModalTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 509257DF17629498004E31D9 /* STModalTest.m */; };
 		F0695DF716013C98000B05D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC01015F1F3200081C635 /* main.m */; };
 		F0695DF816013C98000B05D0 /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC01415F1F3200081C635 /* STAppDelegate.m */; };
 		F0695DF916013C98000B05D0 /* STLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0FBC01715F1F3200081C635 /* STLoginViewController.m */; };
@@ -62,6 +66,8 @@
 
 /* Begin PBXFileReference section */
 		1F18743C1606533F000360CA /* STLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STLoginViewController.xib; sourceTree = "<group>"; };
+		509257D617628B01004E31D9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		509257DF17629498004E31D9 /* STModalTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STModalTest.m; sourceTree = "<group>"; };
 		F0024D2015F5A51100476EF7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F0024D9215F5DF6B00476EF7 /* STLoginTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoginTest.m; sourceTree = "<group>"; };
 		F0695E0516013C98000B05D0 /* SubliminalTest (Integration Tests).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SubliminalTest (Integration Tests).app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509257DE17628ECD004E31D9 /* StoreKit.framework in Frameworks */,
 				F0E2F5F8175B12DD00BBAA54 /* libSubliminal.a in Frameworks */,
 				F0695DFC16013C98000B05D0 /* UIKit.framework in Frameworks */,
 				F0695DFD16013C98000B05D0 /* Foundation.framework in Frameworks */,
@@ -100,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				509257D717628B01004E31D9 /* StoreKit.framework in Frameworks */,
 				F0FBC00515F1F3200081C635 /* UIKit.framework in Frameworks */,
 				F0FBC00715F1F3200081C635 /* Foundation.framework in Frameworks */,
 				F0FBC00915F1F3200081C635 /* CoreGraphics.framework in Frameworks */,
@@ -133,6 +141,7 @@
 			children = (
 				F0E5509D162F45FC00F54F57 /* STSimpleTest.m */,
 				F0024D9215F5DF6B00476EF7 /* STLoginTest.m */,
+				509257DF17629498004E31D9 /* STModalTest.m */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -150,6 +159,7 @@
 		F0FBBFF515F1F3200081C635 = {
 			isa = PBXGroup;
 			children = (
+				509257D617628B01004E31D9 /* StoreKit.framework */,
 				F0FBC00A15F1F3200081C635 /* SubliminalTest */,
 				F0024D2415F5A51100476EF7 /* Integration Tests */,
 				F095E86817534BD100FF653A /* Resources */,
@@ -316,6 +326,7 @@
 			files = (
 				F0FBC00F15F1F3200081C635 /* InfoPlist.strings in Resources */,
 				1F18743D1606533F000360CA /* STLoginViewController.xib in Resources */,
+				509257DB17628C4B004E31D9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,6 +342,7 @@
 				F0695DF916013C98000B05D0 /* STLoginViewController.m in Sources */,
 				F0695DFA16013C98000B05D0 /* STLoginTest.m in Sources */,
 				F0E5509F162F45FC00F54F57 /* STSimpleTest.m in Sources */,
+				509257E017629498004E31D9 /* STModalTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

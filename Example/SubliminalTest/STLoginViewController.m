@@ -23,12 +23,14 @@
 
 #import "STLoginViewController.h"
 
+#import <StoreKit/StoreKit.h>
+
 #if INTEGRATION_TESTING
 #import <Subliminal/Subliminal.h>
 #endif
 
 
-@interface STLoginViewController ()
+@interface STLoginViewController () <SKStoreProductViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *messageLabel;
 @property (weak, nonatomic) IBOutlet UITextField *usernameField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
@@ -113,6 +115,41 @@
     self.submitButton.hidden = NO;
     self.submitButton.enabled = YES;
     self.messageLabel.text = @"";
+}
+- (IBAction)showModalAppStore:(id)sender {
+    SKStoreProductViewController *storeController = [[SKStoreProductViewController alloc] init];
+    storeController.delegate = self; // productViewControllerDidFinish
+    
+    NSDictionary *productParameters = @{ SKStoreProductParameterITunesItemIdentifier : @322852954 };
+    
+    [storeController loadProductWithParameters:productParameters completionBlock:^(BOOL result, NSError *error) {
+        if (result) {
+            [self presentViewController:storeController animated:YES completion:nil];
+        } else {
+            NSLog(@"Error = %@",error);
+            [[[UIAlertView alloc] initWithTitle:@"Uh oh!" message:@"There was a problem displaying the app" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil] show];
+        }
+    }];
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (IBAction)showRegularModal:(id)sender {
+    UIViewController *modalViewController = [[UIViewController alloc] init];
+    modalViewController.view.backgroundColor = [UIColor redColor];
+    
+    modalViewController.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancelPressed:)];
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:modalViewController];
+    
+    [self presentViewController:navController animated:YES completion:nil];
+}
+
+- (void)cancelPressed:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

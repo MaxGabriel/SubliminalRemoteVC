@@ -37,7 +37,7 @@
     [self.window makeKeyAndVisible];
 
 #if INTEGRATION_TESTING
-    [[SLTestController sharedTestController] runTests:[SLTest allTests] withCompletionBlock:nil];
+    [[SLTestController sharedTestController] runTests:[NSSet setWithObject:[SLTest testNamed:@"STModalTest"]] withCompletionBlock:nil];
 #endif
     
     return YES;
